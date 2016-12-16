@@ -1,0 +1,38 @@
+﻿@model smsmwa.accelerator.web.Models.AddContact
+
+
+MVC: _AddressAddMvc.cshtml
+@using (@Html.BeginForm("SavePersonContact", "Person"))
+{
+    @Html.HiddenFor(model=>model.Id)
+    @*<div class="row">*@
+        <div class="col-xs-4">
+            @Html.LabelFor(model => model.ContactTypeId)
+        </div>
+        <div class="col-xs-12">
+            @Html.DropDownList("ContactTypeId", new[]
+            {
+                new SelectListItem {Text = "Work Email", Value = "1"},
+                new SelectListItem {Text = "Personal Email", Value = "2"},
+                new SelectListItem {Text = "Work Phone", Value = "3"},
+                new SelectListItem {Text = "Personal Phone", Value = "4"},
+            })
+        </div>
+    @*</div>
+
+    <div class="row">*@
+        <div class="col-xs-4">
+            @Html.LabelFor(model => model.Value)
+        </div>
+        <div class="col-xs-12">
+            @Html.TextBoxFor(model => model.Value)
+        </div>
+
+
+    @*</div>*@
+    <div class="row">
+        <div class="col-xs-12">
+            <button class="btn btn-default" type="submit">Submit</button>
+        </div>
+    </div>
+}

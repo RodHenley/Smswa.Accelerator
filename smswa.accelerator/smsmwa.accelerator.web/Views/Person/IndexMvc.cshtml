@@ -1,0 +1,24 @@
+﻿@model smswa.accelerator.service.contract.Commands.Person.GetPeopleResponse
+
+@{
+    ViewBag.Title = "MVC";
+}
+
+<h2>@ViewBag.Title</h2>
+<h2>@Model.People.Count() People</h2>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4">Id</div>
+        <div class="col-xs-4">Name</div>
+    </div>
+    @foreach (var person in @Model.People)
+    {
+        <div class="row">
+            <div class="col-xs-4">@person.Id</div>
+            <div class="col-xs-4">@person.Name</div>
+            <div class="col-xs-4">@Html.ActionLink("Details", "Person", new { id = person.Id })</div>
+
+        </div>
+
+    }
+</div>

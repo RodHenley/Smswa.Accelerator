@@ -1,0 +1,34 @@
+﻿<div aria-live="polite">
+    <div class="container">
+        <!-- ko if: posted -->
+        <span>Submitted</span>
+        <!-- /ko-->
+        <!-- ko if: !posted() -->
+        <form data-bind="submit: save">
+            <span>KO: person-contact-add.html</span>
+        <div class="row">
+            <div class="col-xs-4">
+                <label for="addContactType">Type</label>
+            </div>
+            <div class="col-xs-12">
+                <select id="addContactType" data-bind="options: referenceTypes, optionsText: 'display', optionsCaption: 'Please select a type', value: selectedType"></select>
+            </div>
+        </div>
+            <div class="row">
+
+                <div class="col-xs-4">
+                    <label for="addAddressLine1">Value</label>
+                </div>
+                <div class="col-xs-12">
+                    <input id="addValue" type="text" maxlength="50" data-bind="textInput: data.value"/>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <button class="btn btn-default" type="submit" >Submit</button>
+                </div>
+            </div>
+        </form>
+        <!-- /ko-->
+    </div>
+</div>

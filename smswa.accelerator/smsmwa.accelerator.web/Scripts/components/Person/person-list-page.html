@@ -1,0 +1,25 @@
+﻿<h2>person-list-page.html</h2>
+<!-- ko if: !loaded() -->
+<h2>Loading</h2>
+<!-- /ko -->
+<!-- ko if: loaded -->
+<div aria-live="polite">
+    <h2><span data-bind="text:people.length"></span> People</h2>
+    <div class="container">
+        <!-- ko if: people.length -->
+        <div class="row">
+            <div class="col-sm-4">Id</div>
+            <div class="col-xs-4">Name</div>
+        </div>
+        <!-- ko foreach: people -->
+        <div class="row">
+            <div class="col-xs-4">
+                <a data-bind="text: id, attr:{href:'/person/personKo/'+id}" ></a>
+            </div>
+            <div data-bind="text: name" class="col-xs-4"></div>
+        </div>
+        <!-- /ko -->
+        <!-- /ko -->
+    </div>
+</div>
+<!-- /ko -->

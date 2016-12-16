@@ -1,0 +1,19 @@
+﻿@{
+    ViewBag.Title = "title";
+}
+
+<div id="maincontent">
+    PersonKo.cshtml
+    <person-detail-page params="{data: data}"></person-detail-page>
+</div>
+
+<script language="javascript">
+
+    require(['knockout', 'services/componentRegistry', 'path'], function (ko, componentRegistry, path) {
+        componentRegistry.register();
+
+        var element = document.getElementById('maincontent');
+
+        ko.applyBindings({ data: {id: path.last()}}, element);
+    });
+</script>

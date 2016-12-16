@@ -1,0 +1,17 @@
+﻿<!-- ko if: !loaded() -->
+<h2>LoadingAA</h2>
+<!-- /ko -->
+<!-- ko if: loaded -->
+<div aria-live="polite">
+    <h2>person-detail-page.html</h2>
+    <h2><span data-bind="text:person.name"></span></h2>
+    <div class="container">
+        Address: <span data-bind="text:person.homeAddress"></span>
+    </div>
+    <div class="container">
+        Contact: <span data-bind="text:person.primaryContact"></span>
+    </div>
+    <person-address-add params="{data: {id: id}}"></person-address-add>
+    <person-contact-add params="{data: {id: id}}"></person-contact-add>
+</div>
+    <!-- /ko -->

@@ -1,0 +1,19 @@
+﻿@using smsmwa.accelerator.web.Models
+@model smswa.accelerator.service.contract.Commands.Person.GetPersonResponse
+
+@{
+    ViewBag.Title = "title";
+}
+
+MVC: Person.cshtml
+<h2><span>@Model.Person.Name</span></h2>
+<div class="container">
+    Address: <span>@Model.Person.HomeAddress</span>
+</div>
+<div class="container">
+    Contact: <span>@Model.Person.PrimaryContact</span>
+</div>
+<div class="container">
+    @Html.Partial("_AddressAddMvc", new AddAddress())
+    @Html.Partial("_ContactAddMvc", new AddContact())
+</div>

@@ -1,0 +1,71 @@
+﻿@model smsmwa.accelerator.web.Models.AddAddress
+
+
+MVC: _AddressAddMvc.cshtml
+@using (@Html.BeginForm("SavePersonAddress", "Person"))
+{
+    @Html.HiddenFor(model=>model.Id)
+    @*<div class="row">*@
+        <div class="col-xs-4">
+            @Html.LabelFor(model => model.AddressTypeId)
+        </div>
+        <div class="col-xs-12">
+            @Html.DropDownList("AddressTypeId", new[]
+            {
+                new SelectListItem {Text = "Home", Value = "1"},
+                new SelectListItem {Text = "Postal", Value = "2"},
+                new SelectListItem {Text = "Work", Value = "3"},
+            })
+        </div>
+    @*</div>
+
+    <div class="row">*@
+        <div class="col-xs-4">
+            @Html.LabelFor(model => model.Line1)
+        </div>
+        <div class="col-xs-12">
+            @Html.TextBoxFor(model => model.Line1)
+        </div>
+
+        <div class="col-xs-4">
+            @Html.LabelFor(model => model.Line2)
+        </div>
+        <div class="col-xs-12">
+            @Html.TextBoxFor(model => model.Line2)
+        </div>
+
+        <div class="col-xs-4">
+            @Html.LabelFor(model => model.Suburb)
+        </div>
+        <div class="col-xs-12">
+            @Html.TextBoxFor(model => model.Suburb)
+        </div>
+
+        <div class="col-xs-4">
+            @Html.LabelFor(model => model.Postcode)
+        </div>
+        <div class="col-xs-12">
+            @Html.TextBoxFor(model => model.Postcode)
+        </div>
+
+        <div class="col-xs-4">
+            @Html.LabelFor(model => model.State)
+        </div>
+        <div class="col-xs-12">
+            @Html.TextBoxFor(model => model.State)
+        </div>
+
+        <div class="col-xs-4">
+            @Html.LabelFor(model => model.Country)
+        </div>
+        <div class="col-xs-12">
+            @Html.TextBoxFor(model => model.Country)
+        </div>
+
+    @*</div>*@
+    <div class="row">
+        <div class="col-xs-12">
+            <button class="btn btn-default" type="submit">Submit</button>
+        </div>
+    </div>
+}

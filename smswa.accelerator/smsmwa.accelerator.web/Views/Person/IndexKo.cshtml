@@ -1,0 +1,17 @@
+﻿@{
+    ViewBag.Title = "KnockoutJS..";
+}
+
+<h2>@ViewBag.Title</h2>
+<div id="maincontent">
+    <person-list-page></person-list-page>
+</div>
+
+<script language="javascript">
+    require(['knockout', 'services/componentRegistry'], function (ko, componentRegistry) {
+        componentRegistry.register();
+
+        var element = document.getElementById('maincontent');
+        ko.applyBindings({}, element);
+    });
+</script>

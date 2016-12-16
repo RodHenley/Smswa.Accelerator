@@ -1,0 +1,70 @@
+﻿<div aria-live="polite">
+    <div class="container">
+        <!-- ko if: posted -->
+        <span>Submitted</span>
+        <!-- /ko-->
+        <!-- ko if: !posted() -->
+        <form data-bind="submit: save">
+            <span>KO: person-address-add.html</span>
+        <div class="row">
+            <div class="col-xs-4">
+                <label for="addAddressType">Type</label>
+            </div>
+            <div class="col-xs-12">
+                <select id="addAddressType" data-bind="options: referenceTypes, optionsText: 'display', optionsCaption: 'Please select a type', value: selectedType"></select>
+            </div>
+        </div>
+            <div class="row">
+
+                <div class="col-xs-4">
+                    <label for="addAddressLine1">Line 1</label>
+                </div>
+                <div class="col-xs-12">
+                    <input id="addAddressLine1" type="text" maxlength="50" data-bind="textInput: data.line1"/>
+                </div>
+
+                <div class="col-xs-4">
+                    <label for="addAddressLine2">Line 2</label>
+                </div>
+                <div class="col-xs-12">
+                    <input id="addAddressLine2" type="text" maxlength="50" data-bind="textInput: data.line2" />
+                </div>
+
+                <div class="col-xs-4">
+                    <label for="addAddressSuburb">Suburb</label>
+                </div>
+                <div class="col-xs-12">
+                    <input id="addAddressSuburb" type="text" maxlength="50" data-bind="textInput: data.suburb" />
+                </div>
+
+                <div class="col-xs-4">
+                    <label for="addAddressPostcode">Postcode</label>
+                </div>
+                <div class="col-xs-12">
+                    <input id="addAddressPostcode" type="text" maxlength="4" data-bind="textInput: data.postcode" />
+                </div>
+
+                <div class="col-xs-4">
+                    <label for="addAddressState">State</label>
+                </div>
+                <div class="col-xs-12">
+                    <input id="addAddressState" type="text" maxlength="50" data-bind="textInput: data.state" />
+                </div>
+
+                <div class="col-xs-4">
+                    <label for="addAddressCountry">Country</label>
+                </div>
+                <div class="col-xs-12">
+                    <input id="addAddressCountry" type="text" maxlength="50" data-bind="textInput: data.country" />
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <button class="btn btn-default" type="submit" >Submit</button>
+                </div>
+            </div>
+        </form>
+        <!-- /ko-->
+    </div>
+</div>
